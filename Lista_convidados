@@ -1,0 +1,98 @@
+programa
+{
+inclua biblioteca Util --> u
+	cadeia convidados[100]
+	inteiro opcao  
+	cadeia nome
+	cadeia sl
+	cadeia remova
+  inteiro ndc=0
+	funcao inicio()
+	{
+	 faca {
+		escreva("\n==========MENU========||\n")
+		escreva("[ 1 ] Cadastrar Pessoa||\n")
+		escreva("[ 2 ] Listar Pessoas  ||\n")
+		escreva("[ 3 ] Remover Pessoas ||\n")
+		escreva("[ 4 ] Sair            ||\n")
+		escreva("======================||\n")
+		escreva("Opção: ")
+		leia(opcao)
+
+			escolha(opcao){
+	
+			caso 1: 
+				limpa()
+				escreva("Cadastrar\n")
+				escreva("Qual o nome do convidado? ")
+				leia(nome)
+				para(inteiro i=0; i < 100; i++){
+					se(convidados[i] == "")
+					{
+						convidados[i] = nome
+
+						se(ndc>i){
+							ndc=ndc
+							pare
+						}
+            ndc=i+1
+						pare
+					}
+					
+				}
+				
+				
+
+				pare
+				
+			caso 2:
+				limpa() 
+				escreva("Listar\n")
+				para(inteiro f=0; f <= ndc; f++){
+					
+				
+					
+					escreva(f+1, "º convidado: ",convidados[f], "\n")
+						
+						
+							
+						
+				}
+        faca{
+        escreva("deseja sair da lista?")
+        leia(sl)
+        }enquanto(sl!="sim")
+	
+	pare
+				
+				
+
+			caso 3:
+				limpa()
+				escreva("Remover\n")
+				escreva("Nome que deseja remover: ")
+				leia(remova)
+				para(inteiro j=0; j <= ndc; j++){
+					se(convidados[j] == remova)
+					{
+						convidados[j] = ""
+					}
+				}
+				pare
+
+			caso 4:
+				escreva("Fim do programa!")
+				pare
+				
+			caso contrario: 
+				escreva("Função não existente \n")
+				u.aguarde(1000)
+				limpa()
+				pare
+			}
+		 
+	 }enquanto(opcao != 4)
+		
+	   
+	}
+}
