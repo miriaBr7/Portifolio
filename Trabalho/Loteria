@@ -1,0 +1,219 @@
+programa
+{
+	inclua biblioteca Util--> u
+
+	funcao inicio()
+	{
+		menu()
+	}
+
+	funcao vazio menu()
+	{
+		inteiro opcao 
+		escreva("||*****************||\n")
+		escreva("|| [1] - Mega Sena ||\n")
+		escreva("|| [2] - Quina     ||\n")
+		escreva("|| [3] - Lotomania ||\n")
+		escreva("|| [4] - Lotofácil ||\n")
+		escreva("||*****************||\n")
+		escreva("Qual jogo deseja jogar?\n")
+		leia(opcao)
+		escolha(opcao){
+
+			caso 1: 
+				limpa()
+				Mega_sena()
+			pare
+
+			
+			caso 2: 
+				limpa()
+				Quina()
+			pare
+				
+			caso 3:
+				limpa()
+				Lotomania()
+			pare
+
+			caso 4:
+				limpa()
+			    Lotofacil()
+			pare
+			
+			caso contrario: 
+				limpa()
+				escreva("Essa opção não é valida")
+				u.aguarde(1000)
+				limpa()
+				menu()
+			pare
+		}
+	}
+	funcao Mega_sena()
+	{
+	    inteiro min = 6
+	    inteiro max = 15
+	    inteiro mn = 60
+	    real precos[10]={4.50, 31.50,126.00,378.00, 945.00, 2079.00,4158.00, 7722.00,13513.50,22522.50}
+	     apostador(min, max, mn, precos)
+	    
+	}
+	funcao Quina()
+	{
+	    inteiro min = 5
+	    inteiro max = 15
+	    inteiro mn = 80
+      real precos[11]={ 2.00, 12.00, 42.00,112.00, 252.00,  504.00,  924.00, 1584.00, 2574.00, 4004.00, 6006.00}
+	    apostador(min, max, mn, precos)
+	}
+	funcao Lotomania()
+	{
+	    inteiro min = 50
+	    inteiro max = 50
+	    inteiro mn = 100
+	    inteiro apostas 
+	    escreva("Este jogo esta limitado à 50 dezenas como mínimo e máximo\n")
+	    escreva("Quantas apostas deseja fazer?\n")
+	    leia(apostas)
+	    para(inteiro z=0; z < apostas; z++){
+
+		
+          sorteio( 50, mn)
+          escreva("\n")
+	     }
+        se(apostas>1){
+	        escreva("\nCada jogo custa:1.50")
+	    }
+	    escreva("\nValor a ser pago:",1.50*apostas)
+
+	}
+	funcao Lotofacil()
+	{
+	    inteiro min = 15
+	    inteiro max = 20
+	    inteiro mn = 25
+      real precos[4]={2.50,  40.00, 340.00,  2040.00}
+	    apostador(min, max, mn, precos)
+	     
+	    
+	    
+	}
+	
+	
+	funcao apostador(inteiro min, inteiro max, inteiro mn,real precos[])
+	{
+	    inteiro apostas
+	    inteiro dezena
+	    faca{
+	    escreva("Quantas apostas deseja fazer?\n")
+	    leia(apostas)
+    	    se(apostas < 1)
+    	    {
+    	        escreva("Número mínimo não atingido (1)\n")
+    	    }
+	    }enquanto(apostas < 1)
+	    
+	    faca{
+	    escreva("Quantas dezenas deseja girar?\n")
+	    leia(dezena)
+	    
+	        se(dezena < min)
+    	    {
+    	        escreva("Número mínimo não atingido (", min, ")\n")
+    	    }
+    	    se(dezena> max)
+    	    {
+    	        escreva("Número máximo excedido (", max, ")\n")
+    	    }
+	    }enquanto(dezena < min ou dezena > max)
+       
+	   
+	    para(inteiro z=0; z < apostas; z++){
+
+		
+          sorteio( dezena, mn)
+          escreva("\n")
+	     }
+        valor( min, precos, apostas, dezena)
+	     
+	}
+	funcao sorteio(inteiro dezena,inteiro mn){
+
+		inteiro dezenas_s[100]
+		inteiro n=0
+		logico v=verdadeiro
+
+            para(inteiro i=0; i < dezena; i++){
+
+            	faca{
+                     n= u.sorteia(0,mn) 
+                
+
+		
+               para(inteiro k=0; k < i; k++){
+                 se(n==dezenas_s[k]){
+                 	v=falso
+                 	pare
+                 }senao{
+                 	v=verdadeiro
+                 }
+		   }      
+            		
+            	}enquanto(v==falso)
+            	
+
+		
+
+           
+                dezenas_s[i]=n
+                
+		}
+         para(inteiro l=0; l < dezena; l++){
+
+            para(inteiro j=1; j < dezena; j++){
+
+			se(dezenas_s[j]<dezenas_s[j-1]){
+		       n=dezenas_s[j]
+		       dezenas_s[j]=dezenas_s[j-1]
+		       dezenas_s[j-1]=n
+			}
+
+              
+		}
+		
+     
+
+		}
+
+          para(inteiro m=0; m < dezena; m++){
+             se(m == dezena-1)
+             {
+             	escreva(dezenas_s[m])
+             }
+             senao
+             {
+             	escreva(dezenas_s[m],"--")
+             }
+             
+		}
+
+		
+		
+
+
+		
+	}
+	
+	funcao valor(inteiro min,real precos[],inteiro apostas,inteiro dezena)
+	{
+	    se(apostas>1){
+	        escreva("\nCada jogo custa:", precos[dezena-min])
+	    }
+	    escreva("\nValor a ser pago:",precos[dezena-min]*apostas)
+	   	 
+	    
+	    
+	}
+	
+}
