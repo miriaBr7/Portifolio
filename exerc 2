@@ -1,0 +1,16 @@
+package ola;
+
+public class exer2 {
+
+	public static void main(String[] args) {
+		
+		int n2 = 0;
+		for(int n = 1; n<=100; n++) {
+			
+			n2 = n2 + n;
+					System.out.println(n2);
+		}
+
+	}
+
+}
