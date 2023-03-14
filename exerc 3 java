@@ -1,0 +1,16 @@
+package ola;
+
+public class exerc3 {
+
+	public static void main(String[] args) {
+		
+		
+		for(int n1 = 1; n1 <= 50; n1++) {
+			if(n1 % 3 == 0) {
+				System.out.println(n1);
+			}
+		}
+					
+	}
+
+}
