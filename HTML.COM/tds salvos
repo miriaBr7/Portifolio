@@ -1,0 +1,261 @@
+PROMOCOES>HTML 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megas promocões Elegance</title>
+    <link rel="stylesheet" href="cabelo.css">
+</head>
+<body>
+    <header>
+        <h1>ELEGANCE</h1>
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><a href="pagecabelo.html" class="menu-item">Home</a></li>
+                    <li><a href="promocoes.html" class="menu-item">Promoções</a></li>
+                    <li><a href="#" class="menu-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <ul class="promocoes">
+            <li>
+                <h2>Escova</h2>
+                <img src="escova.jpg">
+                <p class="promocao-descricao"> Faça uma escova e garanta o combo de + um corte totalmente gratuito!</p>
+                <p class="promocao-preco"> R$ 80,00 </p>
+            </li>
+            <li>
+
+                <h2>Hidratação</h2>
+                <img src="hidrata.jpg">
+                <p class="promocao-descricao"> Mega cupom de Hidratação em todos os tipos de cabelo </p>
+                <p class="promocao-preco"> R$ 100,00 </p>
+            </li>
+            <li>
+                <h2>Mechas</h2>
+                <img src="mechas.jpg">
+                <p class="promocao-descricao">Mechas por 50% de DESCONTO!!! </p>
+                <p class="promocao-preco">R$ 150,00</p>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+page.cabelo
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance</title>
+    <link rel="stylesheet" href="cabelo.css">
+
+</head>
+<body>
+    <header>
+            <h1>Elegance</h1>
+            <div class="header">
+      
+       <div class="header">
+        <nav>
+            <ul>
+                <li><a href="cabelo.html" class="menu-item">Home</a></li> 
+                <li><a href="promocoes.html" class="menu-item">Promoçoes</a></li>
+                <li><a href="#" class="menu-item">Contact</a></li>
+            </ul>
+    </nav>
+</div>
+</header>
+
+
+<main>
+    <section class="principal">
+        <img src="salao.jpg" class="imagem">
+           <h3 class="titulo-principal">Sobre nós</h3>
+           <p> Como é bom ter você por aqui!!!  </p>
+            <p> Nós do espaço Elegance trabalhamos com os melhores profissionais da área, para que você tenha a melhor experiência.</p>    
+            
+        </section>    
+        <section class="mapa">
+            <h3 class="titulo-principal">Localização</h3>
+                <p>Nosso espaço está localizado no coração da cidade.</p>    
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.5882151013157!2d-54.5895861!3d-25.518776400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f691c2435ecc5f%3A0x50114aa739215b79!2sElegance%20Sal%C3%A3o%20de%20Beleza%20e%20Modas!5e0!3m2!1spt-BR!2sbr!4v1692753882694!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+        </section>
+    </main>
+                  
+        
+        <footer>
+            <img src="salao.jpg">
+			<p class="copyright">&copy; Copyright Elegance</p>
+        </footer>
+</body>
+</html>
+
+
+
+cabelo.css
+
+header{
+    background-color: rgb(223, 134, 195);
+    color: black;
+    height: 80px;
+}
+
+header h1{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 10px;
+}
+
+nav{
+    position: absolute;
+    right: 50px;
+    top: 25px;
+}
+
+nav li{
+    display: inline;
+    padding: 15px;
+
+}
+
+.menu-item{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.menu-item:hover{
+    text-decoration: underline;
+}
+
+.principal{
+    display: inline;
+    text-align: center;
+}
+
+.imagem{
+    display: inline-block;
+	text-align: center ;
+	width: 25%;
+    -ms-ime-align: 4;
+     display: absolute;
+	border-radius: 80p
+  
+}
+
+
+.titulo-principal{
+    text-align: center;
+    display: absolute;
+    font-size: 30px;
+}
+
+.principal p{
+    font-size: 19px;
+    padding-top: 0px;
+    display: absolute;
+}
+
+.mapa{
+    text-align: center;
+    display: absolute;
+    font-size: 25px;
+}
+
+.mapa p{
+    font-size: 19px;
+    padding-top: 10px;
+}
+
+footer{
+    background-color: slategrey;
+    height: 100px;
+    text-align: center;
+}
+
+footer p{
+    color: rgb(25, 23, 23);
+    font-size: 20px;
+}
+
+footer img{
+    padding-top: 60px;
+}
+
+.promocoes{
+	width: 100px;
+	margin: 100 auto;
+	padding: 100px 0;
+   }
+    
+    
+
+.promocoes{
+	display: -webkit-inline-flex;
+	text-align: center ;
+	width: 100%;
+	vertical-align: text-bottom;
+	margin: 0,1%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 12px solid #c843b9;
+	border-radius: 60px;
+}
+
+.promocoes li:hover {
+	border-color: #C78C19;
+}
+
+.promocoes li:active {
+	border-color: #088C19;	
+}
+
+.promocoes li:hover h2 {
+	font-size: 34px;
+}
+
+.promocoes h2 {
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+.promocoes-descricao {
+	font-size: 20px;
+}
+
+.promocoes-preco {
+	font-size: 22px;
+	font-weight:bolder ;
+	margin-top: 30px;
+}
+
+.promocoes img{
+    width: 280px;
+    height: 320px;
+}
+
+
+
